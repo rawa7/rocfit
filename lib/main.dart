@@ -16,7 +16,7 @@ class RocFitApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
+      providers: [  
         ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
       child: MaterialApp(
