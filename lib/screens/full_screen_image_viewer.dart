@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-
+import '../constants/app_theme.dart';
 
 class FullScreenImageViewer extends StatefulWidget {
   final List<String> imageUrls;
@@ -48,7 +48,7 @@ class _FullScreenImageViewerState extends State<FullScreenImageViewer>
     _fadeController.forward();
     
     // Hide system UI for immersive experience
-    _hideSystemUI();
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
   }
 
   @override
@@ -56,35 +56,14 @@ class _FullScreenImageViewerState extends State<FullScreenImageViewer>
     _pageController.dispose();
     _fadeController.dispose();
     // Restore system UI
-    _showSystemUI();
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
     super.dispose();
-  }
-
-  void _hideSystemUI() {
-    SystemChrome.setEnabledSystemUIMode(
-      SystemUiMode.immersiveSticky,
-      overlays: [],
-    );
-  }
-
-  void _showSystemUI() {
-    SystemChrome.setEnabledSystemUIMode(
-      SystemUiMode.edgeToEdge,
-      overlays: SystemUiOverlay.values,
-    );
   }
 
   void _toggleUIVisibility() {
     setState(() {
       _isVisible = !_isVisible;
     });
-    
-    // Re-hide system UI when toggling
-    if (!_isVisible) {
-      Future.delayed(const Duration(milliseconds: 100), () {
-        _hideSystemUI();
-      });
-    }
   }
 
   void _closeViewer() {
@@ -113,7 +92,7 @@ class _FullScreenImageViewerState extends State<FullScreenImageViewer>
                 },
                 itemCount: widget.imageUrls.length,
                 itemBuilder: (context, index) {
-                  return SizedBox(
+                  return Container(
                     width: double.infinity,
                     height: double.infinity,
                     child: InteractiveViewer(
@@ -186,7 +165,7 @@ class _FullScreenImageViewerState extends State<FullScreenImageViewer>
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      Colors.black.withValues(alpha: 0.7),
+                      Colors.black.withOpacity(0.7),
                       Colors.transparent,
                     ],
                   ),
@@ -197,7 +176,7 @@ class _FullScreenImageViewerState extends State<FullScreenImageViewer>
                     // Close button
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.black.withValues(alpha: 0.5),
+                        color: Colors.black.withOpacity(0.5),
                         shape: BoxShape.circle,
                       ),
                       child: IconButton(
@@ -217,7 +196,7 @@ class _FullScreenImageViewerState extends State<FullScreenImageViewer>
                         vertical: 8,
                       ),
                       decoration: BoxDecoration(
-                        color: Colors.black.withValues(alpha: 0.6),
+                        color: Colors.black.withOpacity(0.6),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Text(
@@ -254,7 +233,7 @@ class _FullScreenImageViewerState extends State<FullScreenImageViewer>
                       begin: Alignment.bottomCenter,
                       end: Alignment.topCenter,
                       colors: [
-                        Colors.black.withValues(alpha: 0.7),
+                        Colors.black.withOpacity(0.7),
                         Colors.transparent,
                       ],
                     ),
@@ -291,7 +270,7 @@ class _FullScreenImageViewerState extends State<FullScreenImageViewer>
                               imageUrl: widget.imageUrls[index],
                               fit: BoxFit.cover,
                               placeholder: (context, url) => Container(
-                                color: Colors.grey.withValues(alpha: 0.3),
+                                color: Colors.grey.withOpacity(0.3),
                                 child: const Center(
                                   child: CircularProgressIndicator(
                                     color: Colors.white,
@@ -300,7 +279,7 @@ class _FullScreenImageViewerState extends State<FullScreenImageViewer>
                                 ),
                               ),
                               errorWidget: (context, url, error) => Container(
-                                color: Colors.grey.withValues(alpha: 0.3),
+                                color: Colors.grey.withOpacity(0.3),
                                 child: const Icon(
                                   Icons.image_not_supported,
                                   color: Colors.white,

@@ -50,22 +50,29 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     return Scaffold(
       body: _screens[_currentIndex],
       floatingActionButton: Container(
-        height: 90,
-        width: 90,
-        decoration: const BoxDecoration(
+        height: 65,
+        width: 65,
+        decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: Colors.transparent,
+          color: AppColors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.2),
+              blurRadius: 10,
+              offset: const Offset(0, 3),
+            ),
+          ],
         ),
         child: FloatingActionButton(
           onPressed: _onHomeTap,
           backgroundColor: Colors.transparent,
           elevation: 0,
           child: Container(
-            padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.all(8),
             child: Image.asset(
-              'assets/Homebutton_logo.png',
-              height: 65,
-              width: 65,
+              'assets/welcome_logo.png',
+              height: 40,
+              width: 40,
               fit: BoxFit.contain,
             ),
           ),
