@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 import '../constants/app_theme.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -23,8 +23,8 @@ class _SplashScreenState extends State<SplashScreen> {
               const Spacer(),
               
               // Logo
-              SvgPicture.asset(
-                AppConstants.logoPath,
+              Image.asset(
+                'assets/welcome_logo.png',
                 height: 200,
                 width: 200,
               ),
@@ -69,7 +69,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     ),
                   ),
                   child: const Text(
-                    'GET START',
+                    'GET STARTED',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,

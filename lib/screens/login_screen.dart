@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:provider/provider.dart';
 import '../constants/app_theme.dart';
 import '../providers/auth_provider.dart';
@@ -85,8 +85,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 40),
                 
                 // Logo
-                SvgPicture.asset(
-                  AppConstants.logoPath,
+                Image.asset(
+                  'assets/Loginpage_logo.png',
                   height: 150,
                   width: 150,
                 ),
@@ -230,17 +230,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                 ),
                 
-                const SizedBox(height: AppConstants.paddingLarge),
-                
-                // Or Register
-                Text(
-                  'Or Register',
-                  style: AppTextStyles.bodyText1.copyWith(
-                    color: AppColors.greyDark,
-                  ),
-                ),
-                
-                const SizedBox(height: 80),
+                const SizedBox(height: AppConstants.paddingXLarge),
                 
                 // Continue as Guest Button
                 SizedBox(
@@ -256,7 +246,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     child: const Text(
-                      'Continue as Gest',
+                      'Continue as Guest',
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,

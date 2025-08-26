@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 import '../constants/app_theme.dart';
 import 'home_screen.dart';
 import 'exercise_screen.dart';
 import 'calculator_screen.dart';
 import 'feedback_screen.dart';
 import 'profile_screen.dart';
+
 
 class MainNavigationScreen extends StatefulWidget {
   const MainNavigationScreen({super.key});
@@ -15,20 +16,62 @@ class MainNavigationScreen extends StatefulWidget {
 }
 
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
-  int _currentIndex = 2; // Start with Home tab (middle)
+  int _currentIndex = 2; // Start with Home tab (center button)
   
   final List<Widget> _screens = [
     const ExerciseScreen(),
     const CalculatorScreen(),
-    const HomeScreen(),
+    const HomeScreen(), // Index 2 for center home button
     const FeedbackScreen(),
     const ProfileScreen(),
   ];
+
+  void _onNavigationTap(int index) {
+    setState(() {
+      // Map navigation bar indices to screen indices
+      if (index >= 2) {
+        // Indices 2,3 in nav bar map to 3,4 in screens (skipping home at index 2)
+        _currentIndex = index + 1;
+      } else {
+        // Indices 0,1 remain the same
+        _currentIndex = index;
+      }
+    });
+  }
+
+  void _onHomeTap() {
+    setState(() {
+      _currentIndex = 2; // Home screen index
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _screens[_currentIndex],
+      floatingActionButton: Container(
+        height: 90,
+        width: 90,
+        decoration: const BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.transparent,
+        ),
+        child: FloatingActionButton(
+          onPressed: _onHomeTap,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          child: Container(
+            padding: const EdgeInsets.all(12),
+            child: Image.asset(
+              'assets/Homebutton_logo.png',
+              height: 65,
+              width: 65,
+              fit: BoxFit.contain,
+            ),
+          ),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
           boxShadow: [
@@ -39,72 +82,89 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             ),
           ],
         ),
-        child: BottomNavigationBar(
-          currentIndex: _currentIndex,
-          onTap: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: AppColors.primary,
-          selectedItemColor: AppColors.secondary,
-          unselectedItemColor: AppColors.white.withOpacity(0.7),
-          elevation: 0,
-          selectedFontSize: 12,
-          unselectedFontSize: 12,
-          items: [
-            // Exercise Tab
-            BottomNavigationBarItem(
-              icon: Container(
-                padding: const EdgeInsets.symmetric(vertical: 4),
-                child: const Icon(Icons.fitness_center, size: 24),
-              ),
-              label: 'EXERCISE',
-            ),
-            
-            // Calculator Tab
-            BottomNavigationBarItem(
-              icon: Container(
-                padding: const EdgeInsets.symmetric(vertical: 4),
-                child: const Icon(Icons.calculate, size: 24),
-              ),
-              label: 'CALCULATOR',
-            ),
-            
-            // Home Tab (Center)
-            BottomNavigationBarItem(
-              icon: Container(
-                padding: const EdgeInsets.symmetric(vertical: 4),
-                child: SvgPicture.asset(
-                  AppConstants.logoPath,
-                  height: 32,
-                  width: 32,
-                  colorFilter: ColorFilter.mode(
-                    _currentIndex == 2 ? AppColors.secondary : AppColors.white.withOpacity(0.7),
-                    BlendMode.srcIn,
-                  ),
+        child: BottomAppBar(
+          shape: const CircularNotchedRectangle(),
+          notchMargin: 8,
+          color: AppColors.primary,
+          child: SizedBox(
+            height: 65,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                // Exercise Tab
+                _buildNavItem(
+                  icon: Icons.fitness_center,
+                  label: 'EXERCISE',
+                  index: 0,
+                  screenIndex: 0,
                 ),
-              ),
-              label: 'HOME',
+                
+                // Calculator Tab  
+                _buildNavItem(
+                  icon: Icons.calculate,
+                  label: 'CALCULATOR',
+                  index: 1,
+                  screenIndex: 1,
+                ),
+                
+                // Space for floating action button
+                const SizedBox(width: 60),
+                
+                // Feedback Tab
+                _buildNavItem(
+                  icon: Icons.feedback_outlined,
+                  label: 'FEEDBACK',
+                  index: 2,
+                  screenIndex: 3,
+                ),
+                
+                // Profile Tab
+                _buildNavItem(
+                  icon: Icons.person_outline,
+                  label: 'PROFILE',
+                  index: 3,
+                  screenIndex: 4,
+                ),
+              ],
             ),
-            
-            // Feedback Tab
-            BottomNavigationBarItem(
-              icon: Container(
-                padding: const EdgeInsets.symmetric(vertical: 4),
-                child: const Icon(Icons.chat_bubble_outline, size: 24),
-              ),
-              label: 'FEEDBACK',
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildNavItem({
+    required IconData icon,
+    required String label,
+    required int index,
+    required int screenIndex,
+  }) {
+    final bool isSelected = _currentIndex == screenIndex;
+    
+    return Expanded(
+      child: InkWell(
+        onTap: () => _onNavigationTap(index),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              icon,
+              size: 24,
+              color: isSelected 
+                  ? AppColors.secondary 
+                  : AppColors.white.withValues(alpha: 0.7),
             ),
-            
-            // Profile Tab
-            BottomNavigationBarItem(
-              icon: Container(
-                padding: const EdgeInsets.symmetric(vertical: 4),
-                child: const Icon(Icons.person_outline, size: 24),
+            const SizedBox(height: 4),
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 12,
+                color: isSelected 
+                    ? AppColors.secondary 
+                    : AppColors.white.withValues(alpha: 0.7),
+                fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
               ),
-              label: 'PROFILE',
             ),
           ],
         ),

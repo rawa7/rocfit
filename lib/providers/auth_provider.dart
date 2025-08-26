@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../services/therocfit_api.dart';
 
 class AuthProvider extends ChangeNotifier {
@@ -28,19 +29,45 @@ class AuthProvider extends ChangeNotifier {
   
   Future<void> _checkAuthStatus() async {
     try {
-      final response = await _apiClient.getCurrentUser();
-      if (response.success && response.data != null) {
-        _currentUser = response.data;
+      print('Checking authentication status...');
+      // Since the API doesn't have a getCurrentUser endpoint, 
+      // we'll check if we have stored login data
+      final prefs = await SharedPreferences.getInstance();
+      final storedUserId = prefs.getInt('user_id');
+      final storedUsername = prefs.getString('username');
+      
+      if (storedUserId != null && storedUsername != null) {
+        _currentUser = User(
+          id: storedUserId,
+          name: storedUsername,
+          email: null,
+          phone: null,
+          height: null,
+          weight: null,
+          cityId: null,
+          points: null,
+          lastExerciseDate: null,
+        );
         _isLoggedIn = true;
         _isGuest = false;
+        print('User restored from storage: $storedUsername (ID: $storedUserId)');
         notifyListeners();
+      } else {
+        print('No stored user found');
+        _handleAuthFailure();
       }
     } catch (e) {
-      // User not logged in
-      _isLoggedIn = false;
-      _isGuest = false;
-      notifyListeners();
+      // User not logged in or authentication error
+      print('Auth check exception: $e');
+      _handleAuthFailure();
     }
+  }
+  
+  void _handleAuthFailure() {
+    _currentUser = null;
+    _isLoggedIn = false;
+    _isGuest = false;
+    notifyListeners();
   }
   
   Future<LoginResult> login(String username, String password) async {
@@ -49,13 +76,37 @@ class AuthProvider extends ChangeNotifier {
     
     try {
       final response = await _apiClient.login(username, password);
-      if (response.success && response.data != null) {
-        _currentUser = response.data;
+      if (response.success && response.data != null && response.data!.isSuccess) {
+        // Create a user object from login response
+        _currentUser = User(
+          id: response.data!.userId ?? 0,
+          name: username,
+          email: null,
+          phone: null,
+          height: null,
+          weight: null,
+          cityId: null,
+          points: null,
+          lastExerciseDate: null,
+        );
+        
+        // Store login data for persistence
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setInt('user_id', _currentUser!.id);
+        await prefs.setString('username', username);
+        
         _isLoggedIn = true;
         _isGuest = false;
         _isLoading = false;
         notifyListeners();
         return LoginResult(success: true);
+      } else {
+        _isLoading = false;
+        notifyListeners();
+        return LoginResult(
+          success: false, 
+          message: response.data?.message ?? 'Login failed'
+        );
       }
     } catch (e) {
       _isLoading = false;
@@ -66,10 +117,6 @@ class AuthProvider extends ChangeNotifier {
       }
       return LoginResult(success: false, message: e.toString());
     }
-    
-    _isLoading = false;
-    notifyListeners();
-    return LoginResult(success: false, message: 'Login failed');
   }
   
   Future<void> continueAsGuest() async {
@@ -83,6 +130,11 @@ class AuthProvider extends ChangeNotifier {
     try {
       if (!_isGuest) {
         await _apiClient.logout();
+        
+        // Clear stored data
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.remove('user_id');
+        await prefs.remove('username');
       }
     } catch (e) {
       // Handle logout error if needed

@@ -1,0 +1,802 @@
+{
+  "appName": "RocFit",
+  "@appName": {
+    "description": "The name of the application"
+  },
+  
+  "welcome": "Welcome",
+  "@welcome": {
+    "description": "Welcome message"
+  },
+  
+  "login": "Login",
+  "@login": {
+    "description": "Login button text"
+  },
+  
+  "username": "Username",
+  "@username": {
+    "description": "Username field label"
+  },
+  
+  "password": "Password",
+  "@password": {
+    "description": "Password field label"
+  },
+  
+  "continueAsGuest": "Continue as Guest",
+  "@continueAsGuest": {
+    "description": "Continue as guest button"
+  },
+  
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile screen title"
+  },
+  
+  "home": "Home",
+  "@home": {
+    "description": "Home screen title"
+  },
+  
+  "exercise": "Exercise",
+  "@exercise": {
+    "description": "Exercise screen title"
+  },
+  
+  "calculator": "Calculator",
+  "@calculator": {
+    "description": "Calculator screen title"
+  },
+  
+  "feedback": "Feedback",
+  "@feedback": {
+    "description": "Feedback screen title"
+  },
+  
+  "notifications": "Notifications",
+  "@notifications": {
+    "description": "Notifications screen title"
+  },
+  
+  "shop": "Shop",
+  "@shop": {
+    "description": "Shop screen title"
+  },
+  
+  "mealPlan": "Meal Plan",
+  "@mealPlan": {
+    "description": "Meal plan screen title"
+  },
+  
+  "yourProgress": "Your Progress",
+  "@yourProgress": {
+    "description": "Progress section title"
+  },
+  
+  "workouts": "Workouts",
+  "@workouts": {
+    "description": "Workouts counter label"
+  },
+  
+  "daysTrained": "Days Trained",
+  "@daysTrained": {
+    "description": "Days trained counter label"
+  },
+  
+  "points": "Points",
+  "@points": {
+    "description": "Points counter label"
+  },
+  
+  "membershipStatus": "Membership Status",
+  "@membershipStatus": {
+    "description": "Membership status section title"
+  },
+  
+  "active": "ACTIVE",
+  "@active": {
+    "description": "Active membership status"
+  },
+  
+  "expired": "EXPIRED",
+  "@expired": {
+    "description": "Expired membership status"
+  },
+  
+  "startDate": "Start Date",
+  "@startDate": {
+    "description": "Membership start date label"
+  },
+  
+  "endDate": "End Date",
+  "@endDate": {
+    "description": "Membership end date label"
+  },
+  
+  "daysRemaining": "{count} days remaining",
+  "@daysRemaining": {
+    "description": "Days remaining in membership",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  
+  "membershipExpired": "Membership expired",
+  "@membershipExpired": {
+    "description": "Membership expired message"
+  },
+  
+  "quickActions": "Quick Actions",
+  "@quickActions": {
+    "description": "Quick actions section title"
+  },
+  
+  "workout": "Workout",
+  "@workout": {
+    "description": "Workout quick action"
+  },
+  
+  "meals": "Meals",
+  "@meals": {
+    "description": "Meals quick action"
+  },
+  
+  "progress": "Progress",
+  "@progress": {
+    "description": "Progress quick action"
+  },
+  
+  "moreOptions": "More Options",
+  "@moreOptions": {
+    "description": "More options section title"
+  },
+  
+  "manageNotifications": "Manage your notifications",
+  "@manageNotifications": {
+    "description": "Notifications subtitle"
+  },
+  
+  "browseProducts": "Browse our products",
+  "@browseProducts": {
+    "description": "Shop subtitle"
+  },
+  
+  "shareThoughts": "Share your thoughts with us",
+  "@shareThoughts": {
+    "description": "Feedback subtitle"
+  },
+  
+
+  "logout": "Logout",
+  "@logout": {
+    "description": "Logout button"
+  },
+  
+  "exitGuestMode": "Exit Guest Mode",
+  "@exitGuestMode": {
+    "description": "Exit guest mode button"
+  },
+  
+  "logoutConfirm": "Logout?",
+  "@logoutConfirm": {
+    "description": "Logout confirmation title"
+  },
+  
+  "exitGuestConfirm": "Exit Guest Mode?",
+  "@exitGuestConfirm": {
+    "description": "Exit guest mode confirmation title"
+  },
+  
+  "logoutMessage": "Are you sure you want to logout?",
+  "@logoutMessage": {
+    "description": "Logout confirmation message"
+  },
+  
+  "exitGuestMessage": "Are you sure you want to exit guest mode?",
+  "@exitGuestMessage": {
+    "description": "Exit guest mode confirmation message"
+  },
+  
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button"
+  },
+  
+  "exit": "Exit",
+  "@exit": {
+    "description": "Exit button"
+  },
+  
+  "comingSoon": "Coming soon!",
+  "@comingSoon": {
+    "description": "Coming soon message"
+  },
+  
+  "trackProgress": "Track Your Progress",
+  "@trackProgress": {
+    "description": "Track progress for guest users"
+  },
+  
+  "signUpMessage": "Sign up to track workouts, view stats, and see your fitness journey!",
+  "@signUpMessage": {
+    "description": "Sign up message for guest users"
+  },
+  
+  "loading": "Loading...",
+  "@loading": {
+    "description": "Loading message"
+  },
+  
+  "loadingProfile": "Loading profile...",
+  "@loadingProfile": {
+    "description": "Loading profile message"
+  },
+  
+  "failedToLoadProfile": "Failed to load profile",
+  "@failedToLoadProfile": {
+    "description": "Failed to load profile error"
+  },
+  
+  "retry": "Retry",
+  "@retry": {
+    "description": "Retry button"
+  },
+  
+  "userNotLoggedIn": "User not logged in",
+  "@userNotLoggedIn": {
+    "description": "User not logged in error"
+  },
+  
+  "guestUser": "Guest User",
+  "@guestUser": {
+    "description": "Guest user label"
+  },
+  
+  "member": "Member",
+  "@member": {
+    "description": "Member label"
+  },
+  
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings"
+  },
+  
+  "language": "Language",
+  "@language": {
+    "description": "Language setting"
+  },
+  
+  "selectLanguage": "Select Language",
+  "@selectLanguage": {
+    "description": "Select language dialog title"
+  },
+  
+  "english": "English",
+  "@english": {
+    "description": "English language option"
+  },
+  
+  "arabic": "العربية",
+  "@arabic": {
+    "description": "Arabic language option"
+  },
+  
+  "kurdish": "کوردی",
+  "@kurdish": {
+    "description": "Kurdish language option"
+  },
+  
+  "dayWorkout": "Day {day} Workout",
+  "@dayWorkout": {
+    "description": "Day workout title",
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  
+  "exercises": "exercises",
+  "@exercises": {
+    "description": "Exercises count label"
+  },
+  
+  "loadingExercises": "Loading exercises...",
+  "@loadingExercises": {
+    "description": "Loading exercises message"
+  },
+  
+  "participationEnded": "Participation Period Ended",
+  "@participationEnded": {
+    "description": "Participation period ended title"
+  },
+  
+  "participationDetails": "Participation Details",
+  "@participationDetails": {
+    "description": "Participation details title"
+  },
+  
+  "period": "Period",
+  "@period": {
+    "description": "Period label"
+  },
+  
+  "checkAgain": "Check Again",
+  "@checkAgain": {
+    "description": "Check again button"
+  },
+  
+  "refresh": "Refresh",
+  "@refresh": {
+    "description": "Refresh button"
+  },
+  
+  "startWorkout": "Start Workout",
+  "@startWorkout": {
+    "description": "Start workout button"
+  },
+  
+  "complete": "Complete",
+  "@complete": {
+    "description": "Complete button"
+  },
+  
+  "exerciseCompleted": "{exercise} completed!",
+  "@exerciseCompleted": {
+    "description": "Exercise completed message",
+    "placeholders": {
+      "exercise": {
+        "type": "String"
+      }
+    }
+  },
+  
+  "pleaseLoginToStart": "Please login to start workout",
+  "@pleaseLoginToStart": {
+    "description": "Please login to start workout message"
+  },
+  
+  "pleaseLoginToComplete": "Please login to complete exercises",
+  "@pleaseLoginToComplete": {
+    "description": "Please login to complete exercises message"
+  },
+  
+  "noWorkoutData": "No workout data available",
+  "@noWorkoutData": {
+    "description": "No workout data message"
+  },
+  
+  "continueAsGuestButton": "Continue as Guest",
+  "@continueAsGuestButton": {
+    "description": "Continue as guest button in exercise screen"
+  },
+  
+  "loadingFoods": "Loading foods...",
+  "@loadingFoods": {
+    "description": "Loading foods message"
+  },
+  
+  "noFoodsForMeal": "No foods for this meal",
+  "@noFoodsForMeal": {
+    "description": "No foods for meal message"
+  },
+  
+  "foodCompleted": "{food} completed!",
+  "@foodCompleted": {
+    "description": "Food completed message",
+    "placeholders": {
+      "food": {
+        "type": "String"
+      }
+    }
+  },
+  
+  "breakfast": "Breakfast",
+  "@breakfast": {
+    "description": "Breakfast meal type"
+  },
+  
+  "lunch": "Lunch",
+  "@lunch": {
+    "description": "Lunch meal type"
+  },
+  
+  "dinner": "Dinner",
+  "@dinner": {
+    "description": "Dinner meal type"
+  },
+  
+  "workoutAvailable": "Workout available",
+  "@workoutAvailable": {
+    "description": "Workout available message"
+  },
+  
+  "bmiCalculator": "BMI Calculator",
+  "@bmiCalculator": {
+    "description": "BMI Calculator screen title"
+  },
+  
+  "bmiCalculatorTitle": "BMI CALCULATOR",
+  "@bmiCalculatorTitle": {
+    "description": "BMI Calculator main title"
+  },
+  
+  "units": "Units: ",
+  "@units": {
+    "description": "Units selection label"
+  },
+  
+  "metricUnits": "Metric (cm, kg)",
+  "@metricUnits": {
+    "description": "Metric units option"
+  },
+  
+  "imperialUnits": "Imperial (ft, lbs)",
+  "@imperialUnits": {
+    "description": "Imperial units option"
+  },
+  
+  "metric": "Metric",
+  "@metric": {
+    "description": "Metric unit label"
+  },
+  
+  "imperial": "Imperial",
+  "@imperial": {
+    "description": "Imperial unit label"
+  },
+  
+  "heightCm": "Height (cm)",
+  "@heightCm": {
+    "description": "Height input label in centimeters"
+  },
+  
+  "heightFt": "Height (ft)",
+  "@heightFt": {
+    "description": "Height input label in feet"
+  },
+  
+  "heightHintCm": "e.g., 175",
+  "@heightHintCm": {
+    "description": "Height input hint in centimeters"
+  },
+  
+  "heightHintFt": "e.g., 5.8",
+  "@heightHintFt": {
+    "description": "Height input hint in feet"
+  },
+  
+  "weightKg": "Weight (kg)",
+  "@weightKg": {
+    "description": "Weight input label in kilograms"
+  },
+  
+  "weightLbs": "Weight (lbs)",
+  "@weightLbs": {
+    "description": "Weight input label in pounds"
+  },
+  
+  "weightHintKg": "e.g., 70",
+  "@weightHintKg": {
+    "description": "Weight input hint in kilograms"
+  },
+  
+  "weightHintLbs": "e.g., 154",
+  "@weightHintLbs": {
+    "description": "Weight input hint in pounds"
+  },
+  
+  "calculateBMI": "Calculate BMI",
+  "@calculateBMI": {
+    "description": "Calculate BMI button text"
+  },
+  
+  "clear": "Clear",
+  "@clear": {
+    "description": "Clear button text"
+  },
+  
+  "yourBMIResult": "Your BMI Result",
+  "@yourBMIResult": {
+    "description": "BMI result section title"
+  },
+  
+  "bmi": "BMI",
+  "@bmi": {
+    "description": "BMI label"
+  },
+  
+  "bmiCategories": "BMI Categories",
+  "@bmiCategories": {
+    "description": "BMI categories section title"
+  },
+  
+  "underweight": "Underweight",
+  "@underweight": {
+    "description": "BMI category: underweight"
+  },
+  
+  "normalWeight": "Normal weight",
+  "@normalWeight": {
+    "description": "BMI category: normal weight"
+  },
+  
+  "overweight": "Overweight",
+  "@overweight": {
+    "description": "BMI category: overweight"
+  },
+  
+  "obese": "Obese",
+  "@obese": {
+    "description": "BMI category: obese"
+  },
+  
+  "pleaseEnterHeight": "Please enter your height",
+  "@pleaseEnterHeight": {
+    "description": "Height validation error message"
+  },
+  
+  "pleaseEnterValidHeight": "Please enter a valid height",
+  "@pleaseEnterValidHeight": {
+    "description": "Valid height validation error message"
+  },
+  
+  "heightRangeCm": "Height should be between 50-300 cm",
+  "@heightRangeCm": {
+    "description": "Height range validation error for centimeters"
+  },
+  
+  "heightRangeFt": "Height should be between 1-10 feet",
+  "@heightRangeFt": {
+    "description": "Height range validation error for feet"
+  },
+  
+  "pleaseEnterWeight": "Please enter your weight",
+  "@pleaseEnterWeight": {
+    "description": "Weight validation error message"
+  },
+  
+  "pleaseEnterValidWeight": "Please enter a valid weight",
+  "@pleaseEnterValidWeight": {
+    "description": "Valid weight validation error message"
+  },
+  
+  "weightRangeKg": "Weight should be between 20-500 kg",
+  "@weightRangeKg": {
+    "description": "Weight range validation error for kilograms"
+  },
+  
+  "weightRangeLbs": "Weight should be between 44-1100 lbs",
+  "@weightRangeLbs": {
+    "description": "Weight range validation error for pounds"
+  },
+  
+  "feedbackTitle": "FEEDBACK",
+  "@feedbackTitle": {
+    "description": "Feedback screen title"
+  },
+  
+  "rate": "RATE",
+  "@rate": {
+    "description": "Rate section title"
+  },
+  
+  "feedbackPlaceholder": "TYPE YOUR FEEDBACK HERE ...",
+  "@feedbackPlaceholder": {
+    "description": "Feedback text area placeholder"
+  },
+  
+  "submit": "Submit",
+  "@submit": {
+    "description": "Submit button text"
+  },
+  
+  "pleaseEnterFeedback": "Please enter your feedback",
+  "@pleaseEnterFeedback": {
+    "description": "Please enter feedback error message"
+  },
+  
+  "pleaseLoginToSubmitFeedback": "Please login to submit feedback",
+  "@pleaseLoginToSubmitFeedback": {
+    "description": "Please login to submit feedback error message"
+  },
+  
+  "error": "Error",
+  "@error": {
+    "description": "Generic error label"
+  },
+  
+  "hello": "Hello",
+  "@hello": {
+    "description": "Greeting message"
+  },
+  
+  "homeStartDate": "START DATE",
+  "@homeStartDate": {
+    "description": "Start date label on home screen"
+  },
+  
+  "homeExpireDate": "EXPIRE DATE",
+  "@homeExpireDate": {
+    "description": "Expire date label on home screen"
+  },
+  
+  "mealPlan": "MEAL PLAN",
+  "@mealPlan": {
+    "description": "Meal plan action item"
+  },
+  
+  "supplement": "SUPPLEMENT",
+  "@supplement": {
+    "description": "Supplement action item"
+  },
+  
+  "foodMenu": "FOOD MENU",
+  "@foodMenu": {
+    "description": "Food menu action item"
+  },
+  
+  "shop": "SHOP",
+  "@shop": {
+    "description": "Shop action item"
+  },
+  
+  "image": "Image",
+  "@image": {
+    "description": "Generic image placeholder text"
+  },
+  
+  "noBannerImagesAvailable": "No banner images available",
+  "@noBannerImagesAvailable": {
+    "description": "No banner images available message"
+  },
+  
+  "noWorkoutItemsAvailable": "No workout items available",
+  "@noWorkoutItemsAvailable": {
+    "description": "No workout items available message"
+  },
+  
+  "retry": "Retry",
+  "@retry": {
+    "description": "Retry button text"
+  },
+  
+  "star": "star",
+  "@star": {
+    "description": "Star rating label"
+  },
+  
+  "tapToViewDetails": "Tap to view details",
+  "@tapToViewDetails": {
+    "description": "Tap to view details message"
+  },
+  
+  "loadingMenuItems": "Loading menu items...",
+  "@loadingMenuItems": {
+    "description": "Loading menu items message"
+  },
+  
+  "failedToLoadMenuItems": "Failed to load menu items",
+  "@failedToLoadMenuItems": {
+    "description": "Failed to load menu items error"
+  },
+  
+  "pleaseTryAgain": "Please try again.",
+  "@pleaseTryAgain": {
+    "description": "Please try again message"
+  },
+  
+  "all": "All",
+  "@all": {
+    "description": "All categories filter option"
+  },
+  
+  "noItemsFound": "No {itemType} items found",
+  "@noItemsFound": {
+    "description": "No items found message",
+    "placeholders": {
+      "itemType": {
+        "type": "String"
+      }
+    }
+  },
+  
+  "inCategory": "in {category} category",
+  "@inCategory": {
+    "description": "In specific category message",
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  
+  "noImageAvailable": "No Image Available",
+  "@noImageAvailable": {
+    "description": "No image available message"
+  },
+  
+  "loadingImage": "Loading image...",
+  "@loadingImage": {
+    "description": "Loading image message"
+  },
+  
+  "unableToLoadImage": "Unable to load image",
+  "@unableToLoadImage": {
+    "description": "Unable to load image error"
+  },
+  
+  "price": "Price:",
+  "@price": {
+    "description": "Price label"
+  },
+  
+  "description": "Description",
+  "@description": {
+    "description": "Description label"
+  },
+  
+  "noDescriptionAvailable": "No description available for this item.",
+  "@noDescriptionAvailable": {
+    "description": "No description available message"
+  },
+  
+  "food": "Food",
+  "@food": {
+    "description": "Food item type"
+  },
+  
+  "suppliment": "Supplement",
+  "@suppliment": {
+    "description": "Supplement item type"
+  },
+  
+  "mealPlanTitle": "MEAL PLAN",
+  "@mealPlanTitle": {
+    "description": "Meal plan screen title"
+  },
+  
+  "tapToViewMealImage": "Tap to view meal image",
+  "@tapToViewMealImage": {
+    "description": "Tap to view meal image hint text"
+  },
+  
+  "foods": "foods",
+  "@foods": {
+    "description": "Foods count label"
+  },
+  
+  "serving": "Serving: {amount}",
+  "@serving": {
+    "description": "Serving size label",
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  
+  "failedToLoadMealPlan": "Failed to load meal plan",
+  "@failedToLoadMealPlan": {
+    "description": "Failed to load meal plan error message"
+  },
+  
+  "failedToLoadFoods": "Failed to load foods",
+  "@failedToLoadFoods": {
+    "description": "Failed to load foods error message"
+  },
+  
+  "pinchToZoom": "Pinch to zoom • Tap outside to close",
+  "@pinchToZoom": {
+    "description": "Image viewer instructions"
+  },
+  
+  "tapOutsideToClose": "Tap outside to close",
+  "@tapOutsideToClose": {
+    "description": "Dialog close instructions"
+  }
+}

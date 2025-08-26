@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'constants/app_theme.dart';
 import 'providers/auth_provider.dart';
+import 'providers/language_provider.dart';
 import 'screens/splash_screen.dart';
 import 'screens/login_screen.dart';
 import 'screens/main_navigation_screen.dart';
+import 'l10n/app_localizations.dart';
 
 void main() {
   runApp(const RocFitApp());
@@ -18,16 +21,35 @@ class RocFitApp extends StatelessWidget {
     return MultiProvider(
       providers: [  
         ChangeNotifierProvider(create: (_) => AuthProvider()),
+        ChangeNotifierProvider(create: (_) => LanguageProvider()),
       ],
-      child: MaterialApp(
-        title: AppConstants.appName,
-        theme: AppTheme.lightTheme,
-        debugShowCheckedModeBanner: false,
-        home: const AuthWrapper(),
-        routes: {
-          '/splash': (context) => const SplashScreen(),
-          '/login': (context) => const LoginScreen(),
-          '/main': (context) => const MainNavigationScreen(),
+      child: Consumer<LanguageProvider>(
+        builder: (context, languageProvider, child) {
+          return Directionality(
+            textDirection: languageProvider.isRTL ? TextDirection.rtl : TextDirection.ltr,
+            child: MaterialApp(
+              title: AppConstants.appName,
+              theme: AppTheme.lightTheme,
+              debugShowCheckedModeBanner: false,
+              
+              // Localization support
+              locale: languageProvider.locale,
+              localizationsDelegates: const [
+                AppLocalizations.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: LanguageProvider.supportedLocales,
+              
+              home: const AuthWrapper(),
+              routes: {
+                '/splash': (context) => const SplashScreen(),
+                '/login': (context) => const LoginScreen(),
+                '/main': (context) => const MainNavigationScreen(),
+              },
+            ),
+          );
         },
       ),
     );
@@ -45,9 +67,10 @@ class _AuthWrapperState extends State<AuthWrapper> {
   @override
   void initState() {
     super.initState();
-    // Initialize the auth provider
+    // Initialize providers
     WidgetsBinding.instance.addPostFrameCallback((_) {
       Provider.of<AuthProvider>(context, listen: false).initialize();
+      Provider.of<LanguageProvider>(context, listen: false).initialize();
     });
   }
 
@@ -98,6 +121,10 @@ class _AuthWrapperState extends State<AuthWrapper> {
         if (authProvider.isLoggedIn || authProvider.isGuest) {
           return const MainNavigationScreen();
         } else {
+          // If there's a persistent auth failure, go to guest mode
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            authProvider.continueAsGuest();
+          });
           return const SplashScreen();
         }
       },
