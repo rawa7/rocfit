@@ -166,6 +166,12 @@ abstract class AppLocalizations {
   /// **'Feedback'**
   String get feedback;
 
+  /// Feedback navigation label
+  ///
+  /// In en, this message translates to:
+  /// **'Feedback'**
+  String get feedbackNav;
+
   /// Notifications screen title
   ///
   /// In en, this message translates to:
@@ -298,7 +304,7 @@ abstract class AppLocalizations {
   /// **'Share your thoughts with us'**
   String get shareThoughts;
 
-  /// Logout button
+  /// Logout button text
   ///
   /// In en, this message translates to:
   /// **'Logout'**
@@ -999,6 +1005,324 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Tap outside to close'**
   String get tapOutsideToClose;
+
+  /// Daily creatine needed label
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Creatine'**
+  String get dailyCreatine;
+
+  /// Daily protein needed label
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Protein'**
+  String get dailyProtein;
+
+  /// Grams per day format
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} g/day'**
+  String gramsPerDay(String amount);
+
+  /// Daily nutritional needs section title
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Nutritional Needs'**
+  String get nutritionalNeeds;
+
+  /// Age input label
+  ///
+  /// In en, this message translates to:
+  /// **'Age'**
+  String get age;
+
+  /// Age input hint
+  ///
+  /// In en, this message translates to:
+  /// **'e.g., 25'**
+  String get ageHint;
+
+  /// Gender selection label
+  ///
+  /// In en, this message translates to:
+  /// **'Gender'**
+  String get gender;
+
+  /// Male gender option
+  ///
+  /// In en, this message translates to:
+  /// **'Male'**
+  String get male;
+
+  /// Female gender option
+  ///
+  /// In en, this message translates to:
+  /// **'Female'**
+  String get female;
+
+  /// Activity level selection label
+  ///
+  /// In en, this message translates to:
+  /// **'Activity Level'**
+  String get activityLevel;
+
+  /// Sedentary activity level
+  ///
+  /// In en, this message translates to:
+  /// **'Sedentary'**
+  String get sedentary;
+
+  /// Lightly active activity level
+  ///
+  /// In en, this message translates to:
+  /// **'Lightly Active'**
+  String get lightlyActive;
+
+  /// Moderately active activity level
+  ///
+  /// In en, this message translates to:
+  /// **'Moderately Active'**
+  String get moderatelyActive;
+
+  /// Very active activity level
+  ///
+  /// In en, this message translates to:
+  /// **'Very Active'**
+  String get veryActive;
+
+  /// Super active activity level
+  ///
+  /// In en, this message translates to:
+  /// **'Super Active'**
+  String get superActive;
+
+  /// BMR calculation label
+  ///
+  /// In en, this message translates to:
+  /// **'BMR (Basal Metabolic Rate)'**
+  String get bmr;
+
+  /// TDEE calculation label
+  ///
+  /// In en, this message translates to:
+  /// **'TDEE (Total Daily Energy Expenditure)'**
+  String get tdee;
+
+  /// Daily water intake label
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Water Intake'**
+  String get dailyWater;
+
+  /// Body fat percentage label
+  ///
+  /// In en, this message translates to:
+  /// **'Body Fat Percentage'**
+  String get bodyFatPercentage;
+
+  /// Ideal body weight label
+  ///
+  /// In en, this message translates to:
+  /// **'Ideal Body Weight'**
+  String get idealBodyWeight;
+
+  /// Calories per day format
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} cal/day'**
+  String caloriesPerDay(String amount);
+
+  /// Liters per day format
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} L/day'**
+  String litersPerDay(String amount);
+
+  /// Percentage format
+  ///
+  /// In en, this message translates to:
+  /// **'{amount}%'**
+  String percentage(String amount);
+
+  /// Kilograms format
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} kg'**
+  String kilograms(String amount);
+
+  /// Macronutrients section title
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Macronutrients'**
+  String get macronutrients;
+
+  /// Carbohydrates label
+  ///
+  /// In en, this message translates to:
+  /// **'Carbohydrates'**
+  String get carbohydrates;
+
+  /// Fats label
+  ///
+  /// In en, this message translates to:
+  /// **'Fats'**
+  String get fats;
+
+  /// Calories and grams format
+  ///
+  /// In en, this message translates to:
+  /// **'{calories} cal ({grams}g)'**
+  String caloriesAndGrams(String calories, String grams);
+
+  /// Age validation error message
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your age'**
+  String get pleaseEnterAge;
+
+  /// Valid age validation error message
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid age'**
+  String get pleaseEnterValidAge;
+
+  /// Age range validation error message
+  ///
+  /// In en, this message translates to:
+  /// **'Age should be between 10-120 years'**
+  String get ageRange;
+
+  /// Metabolic calculations section title
+  ///
+  /// In en, this message translates to:
+  /// **'Metabolic Calculations'**
+  String get metabolicCalculations;
+
+  /// Body composition section title
+  ///
+  /// In en, this message translates to:
+  /// **'Body Composition'**
+  String get bodyComposition;
+
+  /// Statistics screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Statistics'**
+  String get statistics;
+
+  /// Title for exercise completion dialog
+  ///
+  /// In en, this message translates to:
+  /// **'🎉 Exercise Completed!'**
+  String get exerciseCompletedTitle;
+
+  /// Title for workout completion dialog
+  ///
+  /// In en, this message translates to:
+  /// **'🎉 All Exercises Completed!'**
+  String get workoutCompletedTitle;
+
+  /// Body text for exercise completion dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Great job! You completed all sets.'**
+  String get exerciseCompletedBody;
+
+  /// Body text for workout completion dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Amazing work! You completed your entire workout. Keep it up! 💪'**
+  String get workoutCompletedBody;
+
+  /// Loading statistics message
+  ///
+  /// In en, this message translates to:
+  /// **'Loading statistics...'**
+  String get loadingStatistics;
+
+  /// Error message title
+  ///
+  /// In en, this message translates to:
+  /// **'Oops! Something went wrong'**
+  String get somethingWentWrong;
+
+  /// Overview section title with days
+  ///
+  /// In en, this message translates to:
+  /// **'Overview ({days} days)'**
+  String overviewDays(int days);
+
+  /// Active days stat title
+  ///
+  /// In en, this message translates to:
+  /// **'Active Days'**
+  String get activeDays;
+
+  /// Last 30 days subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Last 30 days'**
+  String get last30Days;
+
+  /// Current streak stat title
+  ///
+  /// In en, this message translates to:
+  /// **'Current Streak'**
+  String get currentStreak;
+
+  /// Days unit
+  ///
+  /// In en, this message translates to:
+  /// **'Days'**
+  String get days;
+
+  /// Total volume stat title
+  ///
+  /// In en, this message translates to:
+  /// **'Total Volume'**
+  String get totalVolume;
+
+  /// Total weight lifted subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Total weight lifted'**
+  String get totalWeightLifted;
+
+  /// Weekly progress section title
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly Progress'**
+  String get weeklyProgress;
+
+  /// Weight lifted chart label
+  ///
+  /// In en, this message translates to:
+  /// **'Weight Lifted (kg)'**
+  String get weightLiftedKg;
+
+  /// Personal record section title
+  ///
+  /// In en, this message translates to:
+  /// **'Personal Record'**
+  String get personalRecord;
+
+  /// Personal best label
+  ///
+  /// In en, this message translates to:
+  /// **'Personal Best'**
+  String get personalBest;
+
+  /// Continue button text
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get continueButton;
+
+  /// Statistics option subtitle in profile page
+  ///
+  /// In en, this message translates to:
+  /// **'View your workout progress and achievements'**
+  String get statisticsSubtitle;
 }
 
 class _AppLocalizationsDelegate

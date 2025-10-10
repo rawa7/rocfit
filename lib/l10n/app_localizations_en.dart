@@ -42,6 +42,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get feedback => 'Feedback';
 
   @override
+  String get feedbackNav => 'Feedback';
+
+  @override
   String get notifications => 'Notifications';
 
   @override
@@ -473,4 +476,179 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tapOutsideToClose => 'Tap outside to close';
+
+  @override
+  String get dailyCreatine => 'Daily Creatine';
+
+  @override
+  String get dailyProtein => 'Daily Protein';
+
+  @override
+  String gramsPerDay(String amount) {
+    return '$amount g/day';
+  }
+
+  @override
+  String get nutritionalNeeds => 'Daily Nutritional Needs';
+
+  @override
+  String get age => 'Age';
+
+  @override
+  String get ageHint => 'e.g., 25';
+
+  @override
+  String get gender => 'Gender';
+
+  @override
+  String get male => 'Male';
+
+  @override
+  String get female => 'Female';
+
+  @override
+  String get activityLevel => 'Activity Level';
+
+  @override
+  String get sedentary => 'Sedentary';
+
+  @override
+  String get lightlyActive => 'Lightly Active';
+
+  @override
+  String get moderatelyActive => 'Moderately Active';
+
+  @override
+  String get veryActive => 'Very Active';
+
+  @override
+  String get superActive => 'Super Active';
+
+  @override
+  String get bmr => 'BMR (Basal Metabolic Rate)';
+
+  @override
+  String get tdee => 'TDEE (Total Daily Energy Expenditure)';
+
+  @override
+  String get dailyWater => 'Daily Water Intake';
+
+  @override
+  String get bodyFatPercentage => 'Body Fat Percentage';
+
+  @override
+  String get idealBodyWeight => 'Ideal Body Weight';
+
+  @override
+  String caloriesPerDay(String amount) {
+    return '$amount cal/day';
+  }
+
+  @override
+  String litersPerDay(String amount) {
+    return '$amount L/day';
+  }
+
+  @override
+  String percentage(String amount) {
+    return '$amount%';
+  }
+
+  @override
+  String kilograms(String amount) {
+    return '$amount kg';
+  }
+
+  @override
+  String get macronutrients => 'Daily Macronutrients';
+
+  @override
+  String get carbohydrates => 'Carbohydrates';
+
+  @override
+  String get fats => 'Fats';
+
+  @override
+  String caloriesAndGrams(String calories, String grams) {
+    return '$calories cal (${grams}g)';
+  }
+
+  @override
+  String get pleaseEnterAge => 'Please enter your age';
+
+  @override
+  String get pleaseEnterValidAge => 'Please enter a valid age';
+
+  @override
+  String get ageRange => 'Age should be between 10-120 years';
+
+  @override
+  String get metabolicCalculations => 'Metabolic Calculations';
+
+  @override
+  String get bodyComposition => 'Body Composition';
+
+  @override
+  String get statistics => 'Statistics';
+
+  @override
+  String get exerciseCompletedTitle => '🎉 Exercise Completed!';
+
+  @override
+  String get workoutCompletedTitle => '🎉 All Exercises Completed!';
+
+  @override
+  String get exerciseCompletedBody => 'Great job! You completed all sets.';
+
+  @override
+  String get workoutCompletedBody =>
+      'Amazing work! You completed your entire workout. Keep it up! 💪';
+
+  @override
+  String get loadingStatistics => 'Loading statistics...';
+
+  @override
+  String get somethingWentWrong => 'Oops! Something went wrong';
+
+  @override
+  String overviewDays(int days) {
+    return 'Overview ($days days)';
+  }
+
+  @override
+  String get activeDays => 'Active Days';
+
+  @override
+  String get last30Days => 'Last 30 days';
+
+  @override
+  String get currentStreak => 'Current Streak';
+
+  @override
+  String get days => 'Days';
+
+  @override
+  String get totalVolume => 'Total Volume';
+
+  @override
+  String get totalWeightLifted => 'Total weight lifted';
+
+  @override
+  String get weeklyProgress => 'Weekly Progress';
+
+  @override
+  String get weightLiftedKg => 'Weight Lifted (kg)';
+
+  @override
+  String get personalRecord => 'Personal Record';
+
+  @override
+  String get personalBest => 'Personal Best';
+
+  @override
+  String get continueButton => 'Continue';
+
+  @override
+  String get statisticsSubtitle =>
+      'View your workout progress and achievements';
 }

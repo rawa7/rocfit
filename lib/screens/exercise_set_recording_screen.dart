@@ -229,7 +229,7 @@ class _ExerciseSetRecordingScreenState extends State<ExerciseSetRecordingScreen>
             ),
             const SizedBox(height: AppConstants.paddingLarge),
             Text(
-              '🎉 Exercise Completed!',
+              AppLocalizations.of(context)?.exerciseCompletedTitle ?? '🎉 Exercise Completed!',
               style: AppTextStyles.headline3.copyWith(
                 fontWeight: FontWeight.bold,
                 color: AppColors.black,
@@ -238,7 +238,7 @@ class _ExerciseSetRecordingScreenState extends State<ExerciseSetRecordingScreen>
             ),
             const SizedBox(height: AppConstants.paddingSmall),
             Text(
-              'Great job! You completed all sets for ${_getLocalizedExerciseName(widget.exercise, context)}.',
+              AppLocalizations.of(context)?.exerciseCompletedBody ?? 'Great job! You completed all sets.',
               style: AppTextStyles.bodyText1.copyWith(color: AppColors.grey),
               textAlign: TextAlign.center,
             ),
@@ -260,9 +260,9 @@ class _ExerciseSetRecordingScreenState extends State<ExerciseSetRecordingScreen>
                   borderRadius: BorderRadius.circular(AppConstants.radiusSmall),
                 ),
               ),
-              child: const Text(
-                'Continue',
-                style: TextStyle(
+              child: Text(
+                AppLocalizations.of(context)?.continueButton ?? 'Continue',
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                 ),
@@ -515,7 +515,7 @@ class _ExerciseSetRecordingScreenState extends State<ExerciseSetRecordingScreen>
               },
               child: Container(
                 width: double.infinity,
-                height: 220,
+                height: 120,
                 decoration: BoxDecoration(
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(12),
@@ -533,7 +533,7 @@ class _ExerciseSetRecordingScreenState extends State<ExerciseSetRecordingScreen>
                       Image.network(
                         widget.exercise.image!,
                         width: double.infinity,
-                        height: 220,
+                        height: 120,
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) {
                           return Container(

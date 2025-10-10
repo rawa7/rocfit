@@ -27,22 +27,25 @@ class AppLocalizationsAr extends AppLocalizations {
   String get continueAsGuest => 'المتابعة كضيف';
 
   @override
-  String get profile => 'الملف الشخصي';
+  String get profile => 'الصفحة';
 
   @override
-  String get home => 'الرئيسية';
+  String get home => 'الصفحة الرئیسیة';
 
   @override
-  String get exercise => 'التمارين';
+  String get exercise => 'التدریب';
 
   @override
-  String get calculator => 'الحاسبة';
+  String get calculator => 'الحسبة';
 
   @override
-  String get feedback => 'الملاحظات';
+  String get feedback => 'اتغذیة الراجعة';
 
   @override
-  String get notifications => 'الإشعارات';
+  String get feedbackNav => 'اتغذیة الراجعة';
+
+  @override
+  String get notifications => 'الاشعارات';
 
   @override
   String get shop => 'المتجر';
@@ -110,7 +113,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get shareThoughts => 'شاركنا أفكارك';
 
   @override
-  String get logout => 'تسجيل الخروج';
+  String get logout => 'الخروج';
 
   @override
   String get exitGuestMode => 'الخروج من وضع الضيف';
@@ -473,4 +476,178 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get tapOutsideToClose => 'اضغط خارجاً للإغلاق';
+
+  @override
+  String get dailyCreatine => 'الكرياتين اليومي';
+
+  @override
+  String get dailyProtein => 'البروتين اليومي';
+
+  @override
+  String gramsPerDay(String amount) {
+    return '$amount غ/يوم';
+  }
+
+  @override
+  String get nutritionalNeeds => 'الاحتياجات الغذائية اليومية';
+
+  @override
+  String get age => 'العمر';
+
+  @override
+  String get ageHint => 'مثال: 25';
+
+  @override
+  String get gender => 'الجنس';
+
+  @override
+  String get male => 'ذكر';
+
+  @override
+  String get female => 'أنثى';
+
+  @override
+  String get activityLevel => 'مستوى النشاط';
+
+  @override
+  String get sedentary => 'خامل';
+
+  @override
+  String get lightlyActive => 'نشط قليلاً';
+
+  @override
+  String get moderatelyActive => 'نشط متوسط';
+
+  @override
+  String get veryActive => 'نشط جداً';
+
+  @override
+  String get superActive => 'نشط فائق';
+
+  @override
+  String get bmr => 'معدل الأيض الأساسي';
+
+  @override
+  String get tdee => 'إجمالي إنفاق الطاقة اليومي';
+
+  @override
+  String get dailyWater => 'استهلاك الماء اليومي';
+
+  @override
+  String get bodyFatPercentage => 'نسبة دهون الجسم';
+
+  @override
+  String get idealBodyWeight => 'الوزن المثالي للجسم';
+
+  @override
+  String caloriesPerDay(String amount) {
+    return '$amount سعرة/يوم';
+  }
+
+  @override
+  String litersPerDay(String amount) {
+    return '$amount لتر/يوم';
+  }
+
+  @override
+  String percentage(String amount) {
+    return '$amount%';
+  }
+
+  @override
+  String kilograms(String amount) {
+    return '$amount كغ';
+  }
+
+  @override
+  String get macronutrients => 'المغذيات الكبرى اليومية';
+
+  @override
+  String get carbohydrates => 'الكربوهيدرات';
+
+  @override
+  String get fats => 'الدهون';
+
+  @override
+  String caloriesAndGrams(String calories, String grams) {
+    return '$calories سعرة ($gramsغ)';
+  }
+
+  @override
+  String get pleaseEnterAge => 'يرجى إدخال عمرك';
+
+  @override
+  String get pleaseEnterValidAge => 'يرجى إدخال عمر صحيح';
+
+  @override
+  String get ageRange => 'يجب أن يكون العمر بين 10-120 سنة';
+
+  @override
+  String get metabolicCalculations => 'الحسابات الأيضية';
+
+  @override
+  String get bodyComposition => 'تكوين الجسم';
+
+  @override
+  String get statistics => 'الاحصائیات';
+
+  @override
+  String get exerciseCompletedTitle => '🎉 تم الانتهاء من التمرین!';
+
+  @override
+  String get workoutCompletedTitle => '🎉 تم إنجاز جمیع التمارین!';
+
+  @override
+  String get exerciseCompletedBody => 'عمل رائع! لقد أكملت جمیع المجموعات.';
+
+  @override
+  String get workoutCompletedBody =>
+      'عمل رائع! لقد أنجزت تدریبك بالكامل. استمر! 💪';
+
+  @override
+  String get loadingStatistics => 'تحميل الاحصائيات...';
+
+  @override
+  String get somethingWentWrong => 'عذرا! حدث خطأ ما';
+
+  @override
+  String overviewDays(int days) {
+    return 'نظرة عامة ($days أيام)';
+  }
+
+  @override
+  String get activeDays => 'الأيام النشطة';
+
+  @override
+  String get last30Days => 'آخر ٣٠ يوم';
+
+  @override
+  String get currentStreak => 'الشريط الحالي';
+
+  @override
+  String get days => 'الأيام';
+
+  @override
+  String get totalVolume => 'إجمالي الحجم';
+
+  @override
+  String get totalWeightLifted => 'إجمالي الوزن المرفوع';
+
+  @override
+  String get weeklyProgress => 'التقدم الأسبوعي';
+
+  @override
+  String get weightLiftedKg => 'الوزن المرفوع (كيلو)';
+
+  @override
+  String get personalRecord => 'الرقم القياسي الشخصي';
+
+  @override
+  String get personalBest => 'أفضل شخصي';
+
+  @override
+  String get continueButton => 'متابعة';
+
+  @override
+  String get statisticsSubtitle => 'عرض تقدم التمارين والإنجازات';
 }

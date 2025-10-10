@@ -12,6 +12,10 @@ import 'shop_screen.dart';
 import 'game_item_detail_screen.dart';
 import 'notifications_screen.dart';
 import 'exercise_screen.dart';
+import 'calculator_screen.dart';
+import 'feedback_screen.dart';
+import 'profile_screen.dart';
+import 'statistics_screen.dart';
 import 'dart:async';
 
 class HomeScreen extends StatefulWidget {
@@ -119,6 +123,7 @@ class _HomeScreenState extends State<HomeScreen> {
     
     return Scaffold(
       backgroundColor: AppColors.white,
+      drawer: _buildDrawer(context),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -132,15 +137,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   children: [
                     // Menu Icon
-                    IconButton(
-                      icon: const Icon(
-                        Icons.menu,
-                        color: AppColors.black,
-                        size: 28,
+                    Builder(
+                      builder: (context) => IconButton(
+                        icon: const Icon(
+                          Icons.menu,
+                          color: AppColors.black,
+                          size: 28,
+                        ),
+                        onPressed: () {
+                          Scaffold.of(context).openDrawer();
+                        },
                       ),
-                      onPressed: () {
-                        // TODO: Open drawer
-                      },
                     ),
                     
                     const Spacer(),
@@ -862,6 +869,344 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ),
+      ),
+    );
+  }
+  
+  Widget _buildDrawer(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+    
+    return Drawer(
+      backgroundColor: AppColors.white,
+      width: MediaQuery.of(context).size.width * 0.8, // 80% of screen width
+      child: Column(
+        children: [
+          // Header with player name and profile
+          Consumer<AuthProvider>(
+            builder: (context, authProvider, child) {
+              return Container(
+                width: double.infinity,
+                height: 280,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      AppColors.primary,
+                      AppColors.primaryDark,
+                    ],
+                  ),
+                ),
+                child: SafeArea(
+                  bottom: false,
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      left: AppConstants.paddingLarge,
+                      right: AppConstants.paddingLarge,
+                      top: AppConstants.paddingMedium,
+                      bottom: AppConstants.paddingLarge,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const SizedBox(height: AppConstants.paddingMedium),
+                        
+                        // Profile Avatar
+                        Container(
+                          width: 90,
+                          height: 90,
+                          decoration: BoxDecoration(
+                            color: AppColors.white,
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: AppColors.black.withOpacity(0.3),
+                                blurRadius: 12,
+                                offset: const Offset(0, 4),
+                              ),
+                            ],
+                          ),
+                          child: const Icon(
+                            Icons.person,
+                            color: AppColors.primary,
+                            size: 45,
+                          ),
+                        ),
+                        
+                        const SizedBox(height: AppConstants.paddingLarge),
+                        
+                        // Player Name
+                        Container(
+                          width: double.infinity,
+                          child: Text(
+                            authProvider.displayName,
+                            style: AppTextStyles.headline2.copyWith(
+                              color: AppColors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            textAlign: TextAlign.center,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        
+                        const SizedBox(height: 8),
+                        
+                        // Subtitle
+                        Container(
+                          width: double.infinity,
+                          child: Text(
+                            localizations.hello,
+                            style: AppTextStyles.bodyText1.copyWith(
+                              color: AppColors.white.withOpacity(0.9),
+                              fontWeight: FontWeight.w400,
+                            ),
+                            textAlign: TextAlign.center,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        
+                        const SizedBox(height: AppConstants.paddingMedium),
+                      ],
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+          
+          // Navigation Items
+          Expanded(
+            child: ListView(
+              padding: const EdgeInsets.only(
+                top: AppConstants.paddingMedium,
+                bottom: 0, // Remove bottom padding so footer is always visible
+              ),
+              children: [
+                _buildDrawerItem(
+                  icon: Icons.home,
+                  title: localizations.home,
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                _buildDrawerItem(
+                  icon: Icons.fitness_center,
+                  title: localizations.workout,
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ExerciseScreen()),
+                    );
+                  },
+                ),
+                _buildDrawerItem(
+                  icon: Icons.calculate,
+                  title: localizations.calculator,
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const CalculatorScreen()),
+                    );
+                  },
+                ),
+                _buildDrawerItem(
+                  icon: Icons.restaurant_menu,
+                  title: localizations.mealPlan,
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const MealPlanScreen()),
+                    );
+                  },
+                ),
+                _buildDrawerItem(
+                  icon: Icons.menu_book,
+                  title: localizations.foodMenu,
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const MenuScreen(itemType: 'Food')),
+                    );
+                  },
+                ),
+                _buildDrawerItem(
+                  icon: Icons.local_pharmacy,
+                  title: localizations.supplement,
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const MenuScreen(itemType: 'Suppliment')),
+                    );
+                  },
+                ),
+                _buildDrawerItem(
+                  icon: Icons.shopping_cart,
+                  title: localizations.shop,
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ShopScreen()),
+                    );
+                  },
+                ),
+                _buildDrawerItem(
+                  icon: Icons.bar_chart,
+                  title: localizations.statistics,
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const StatisticsScreen()),
+                    );
+                  },
+                ),
+                _buildDrawerItem(
+                  icon: Icons.feedback_outlined,
+                  title: localizations.feedback,
+                  onTap: () {
+                    Navigator.pop(context); // Close drawer first
+                    Navigator.pushNamed(context, '/feedback');
+                  },
+                ),
+                _buildDrawerItem(
+                  icon: Icons.person_outline,
+                  title: localizations.profile,
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ProfileScreen()),
+                    );
+                  },
+                ),
+                _buildDrawerItem(
+                  icon: Icons.notifications_outlined,
+                  title: localizations.notifications,
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const NotificationsScreen()),
+                    );
+                  },
+                ),
+                
+                const Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: AppConstants.paddingMedium,
+                    vertical: AppConstants.paddingSmall,
+                  ),
+                  child: Divider(color: AppColors.greyLight),
+                ),
+                
+                _buildDrawerItem(
+                  icon: Icons.logout,
+                  title: localizations.logout,
+                  onTap: () {
+                    Navigator.pop(context);
+                    Provider.of<AuthProvider>(context, listen: false).logout();
+                  },
+                  textColor: AppColors.error,
+                  iconColor: AppColors.error,
+                ),
+              ],
+            ),
+          ),
+          
+          // Footer - Always visible at bottom
+          SafeArea(
+            top: false,
+            child: Container(
+              padding: const EdgeInsets.all(AppConstants.paddingMedium),
+              decoration: const BoxDecoration(
+                border: Border(
+                  top: BorderSide(
+                    color: AppColors.greyLight,
+                    width: 1,
+                  ),
+                ),
+              ),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(
+                      Icons.palette,
+                      color: AppColors.primary,
+                      size: 16,
+                    ),
+                    const SizedBox(width: 8),
+                    Text(
+                      'Powered by AlignArt',
+                      style: AppTextStyles.caption.copyWith(
+                        color: AppColors.greyDark,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  '© 2024 AlignArt. All rights reserved.',
+                  style: AppTextStyles.caption.copyWith(
+                    color: AppColors.grey,
+                    fontSize: 10,
+                  ),
+                ),
+              ],
+            ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+  
+  Widget _buildDrawerItem({
+    required IconData icon,
+    required String title,
+    required VoidCallback onTap,
+    Color? textColor,
+    Color? iconColor,
+  }) {
+    return Container(
+      margin: const EdgeInsets.symmetric(
+        horizontal: AppConstants.paddingSmall,
+        vertical: 2,
+      ),
+      child: ListTile(
+        leading: Icon(
+          icon,
+          color: iconColor ?? AppColors.greyDark,
+          size: AppConstants.iconMedium,
+        ),
+        title: Text(
+          title,
+          style: AppTextStyles.bodyText2.copyWith(
+            color: textColor ?? AppColors.greyDark,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        onTap: onTap,
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: AppConstants.paddingMedium,
+          vertical: AppConstants.paddingSmall,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppConstants.radiusSmall),
+        ),
+        hoverColor: AppColors.primary.withOpacity(0.05),
+        splashColor: AppColors.primary.withOpacity(0.1),
       ),
     );
   }

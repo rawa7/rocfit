@@ -7,6 +7,7 @@ import 'providers/language_provider.dart';
 import 'screens/splash_screen.dart';
 import 'screens/login_screen.dart';
 import 'screens/main_navigation_screen.dart';
+import 'screens/feedback_screen.dart';
 import 'l10n/app_localizations.dart';
 
 void main() {
@@ -47,6 +48,7 @@ class RocFitApp extends StatelessWidget {
                 '/splash': (context) => const SplashScreen(),
                 '/login': (context) => const LoginScreen(),
                 '/main': (context) => const MainNavigationScreen(),
+                '/feedback': (context) => const FeedbackScreen(),
               },
             ),
           );

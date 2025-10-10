@@ -122,7 +122,12 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
     
-    return Scaffold(
+    return WillPopScope(
+      onWillPop: () async {
+        // Always allow normal navigation back
+        return true;
+      },
+      child: Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
         backgroundColor: Colors.grey[100],
@@ -251,9 +256,10 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
               ),
             ),
             
-            const SizedBox(height: 20),
+            const SizedBox(height: 100), // Extra padding for navigation bar
           ],
         ),
+      ),
       ),
     );
   }

@@ -217,7 +217,8 @@ class _ExerciseSetFormDialogState extends State<ExerciseSetFormDialog> {
           _isLoading = false;
         });
         
-        _showCompletionDialog();
+        // Close dialog after successful recording - completion dialog shown by ExerciseSetRecordingScreen
+        Navigator.of(context).pop(true);
       } else {
         setState(() {
           _errorMessage = 'No sets were recorded. Please fill in at least one set.';
@@ -233,76 +234,7 @@ class _ExerciseSetFormDialogState extends State<ExerciseSetFormDialog> {
     }
   }
 
-  void _showCompletionDialog() {
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) => AlertDialog(
-        backgroundColor: AppColors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppConstants.radiusMedium),
-        ),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: AppColors.primary.withOpacity(0.1),
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                Icons.celebration,
-                size: 48,
-                color: AppColors.primary,
-              ),
-            ),
-            const SizedBox(height: AppConstants.paddingLarge),
-            Text(
-              '🎉 Exercise Completed!',
-              style: AppTextStyles.headline3.copyWith(
-                fontWeight: FontWeight.bold,
-                color: AppColors.black,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: AppConstants.paddingSmall),
-            Text(
-              'Great job! You completed all sets for ${widget.exercise.name}.',
-              style: AppTextStyles.bodyText1.copyWith(color: AppColors.grey),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-        actions: [
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pop(); // Close completion dialog
-                Navigator.of(context).pop(true); // Close set form with success
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primary,
-                foregroundColor: AppColors.white,
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(AppConstants.radiusSmall),
-                ),
-              ),
-              child: const Text(
-                'Continue',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+  // Removed duplicate completion dialog - main completion dialog shown by ExerciseSetRecordingScreen
 
   @override
   Widget build(BuildContext context) {

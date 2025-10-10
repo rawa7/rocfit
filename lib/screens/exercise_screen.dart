@@ -1218,7 +1218,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
             ),
             const SizedBox(height: AppConstants.paddingLarge),
             Text(
-              '🎉 Workout Completed!',
+              AppLocalizations.of(context)?.workoutCompletedTitle ?? '🎉 Workout Completed!',
               style: AppTextStyles.headline3.copyWith(
                 fontWeight: FontWeight.bold,
                 color: AppColors.black,
@@ -1227,7 +1227,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
             ),
             const SizedBox(height: AppConstants.paddingSmall),
             Text(
-              'Congratulations! You completed all exercises for Day ${_selectedDay + 1}.',
+              AppLocalizations.of(context)?.workoutCompletedBody ?? 'Congratulations! You completed all exercises for today.',
               style: AppTextStyles.bodyText1.copyWith(color: AppColors.grey),
               textAlign: TextAlign.center,
             ),
@@ -1420,7 +1420,7 @@ class _ExerciseScreenState extends State<ExerciseScreen> {
               onTap: () => _showFullScreenImage('assets/exercises_home_button.png'),
               child: Container(
               margin: const EdgeInsets.all(AppConstants.paddingMedium),
-              height: 200,
+              height: 120,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(AppConstants.radiusMedium),
                 boxShadow: [

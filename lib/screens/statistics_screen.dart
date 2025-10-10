@@ -4,6 +4,7 @@ import '../constants/app_theme.dart';
 import '../providers/auth_provider.dart';
 import '../providers/language_provider.dart';
 import '../services/therocfit_api.dart';
+import '../l10n/app_localizations.dart';
 
 
 class StatisticsScreen extends StatefulWidget {
@@ -179,7 +180,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
           const Spacer(),
           
           Text(
-            'STATISTICS',
+            AppLocalizations.of(context)!.statistics.toUpperCase(),
             style: AppTextStyles.headline3.copyWith(
               color: AppColors.primary,
               fontWeight: FontWeight.bold,
@@ -204,14 +205,14 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
   
   Widget _buildContent() {
     if (_isLoading) {
-      return const Center(
+      return Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircularProgressIndicator(color: AppColors.primary),
-            SizedBox(height: AppConstants.paddingMedium),
+            const CircularProgressIndicator(color: AppColors.primary),
+            const SizedBox(height: AppConstants.paddingMedium),
             Text(
-              'Loading statistics...',
+              AppLocalizations.of(context)!.loadingStatistics,
               style: AppTextStyles.bodyText1,
             ),
           ],
@@ -233,7 +234,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
               ),
               const SizedBox(height: AppConstants.paddingLarge),
               Text(
-                'Oops! Something went wrong',
+                AppLocalizations.of(context)!.somethingWentWrong,
                 style: AppTextStyles.headline3.copyWith(
                   color: AppColors.black,
                   fontWeight: FontWeight.bold,
@@ -250,7 +251,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
               ElevatedButton.icon(
                 onPressed: _loadStatistics,
                 icon: const Icon(Icons.refresh),
-                label: const Text('Retry'),
+                label: Text(AppLocalizations.of(context)!.retry),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.primary,
                   foregroundColor: AppColors.white,
@@ -291,7 +292,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Overview (${_realStats!.period.days} days)',
+          AppLocalizations.of(context)!.overviewDays(_realStats!.period.days),
           style: AppTextStyles.headline3.copyWith(
             fontWeight: FontWeight.bold,
             color: AppColors.black,
@@ -303,9 +304,9 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
             Expanded(
               child: _buildStatCard(
                 icon: Icons.calendar_today,
-                title: 'Active Days',
+                title: AppLocalizations.of(context)!.activeDays,
                 value: _realStats!.workoutStatistics.activeDays.toString(),
-                subtitle: 'Last 30 days',
+                subtitle: AppLocalizations.of(context)!.last30Days,
                 color: AppColors.primary,
               ),
             ),
@@ -313,9 +314,9 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
             Expanded(
               child: _buildStatCard(
                 icon: Icons.local_fire_department,
-                title: 'Current Streak',
+                title: AppLocalizations.of(context)!.currentStreak,
                 value: _realStats!.workoutStatistics.currentStreak.toString(),
-                subtitle: 'Days',
+                subtitle: AppLocalizations.of(context)!.days,
                 color: Colors.orange,
               ),
             ),
@@ -324,9 +325,9 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
         const SizedBox(height: AppConstants.paddingMedium),
         _buildStatCard(
           icon: Icons.fitness_center,
-          title: 'Total Volume',
+          title: AppLocalizations.of(context)!.totalVolume,
           value: _realStats!.workoutStatistics.formattedTotalVolume,
-          subtitle: 'Total weight lifted',
+          subtitle: AppLocalizations.of(context)!.totalWeightLifted,
           color: AppColors.secondary,
           fullWidth: true,
         ),
@@ -399,7 +400,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Weekly Progress',
+          AppLocalizations.of(context)!.weeklyProgress,
           style: AppTextStyles.headline3.copyWith(
             fontWeight: FontWeight.bold,
             color: AppColors.black,
@@ -418,7 +419,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Weight Lifted (kg)',
+                    AppLocalizations.of(context)!.weightLiftedKg,
                     style: AppTextStyles.bodyText1.copyWith(
                       fontWeight: FontWeight.w600,
                       color: AppColors.greyDark,
@@ -501,7 +502,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Personal Record',
+          AppLocalizations.of(context)!.personalRecord,
           style: AppTextStyles.headline3.copyWith(
             fontWeight: FontWeight.bold,
             color: AppColors.black,
@@ -602,7 +603,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                'Personal Best',
+                AppLocalizations.of(context)!.personalBest,
                 style: AppTextStyles.bodyText2.copyWith(
                   color: AppColors.secondary,
                   fontWeight: FontWeight.bold,

@@ -27,19 +27,22 @@ class AppLocalizationsFa extends AppLocalizations {
   String get continueAsGuest => 'وەک میوان بەردەوام بە';
 
   @override
-  String get profile => 'پڕۆفایل';
+  String get profile => 'هەژمار';
 
   @override
-  String get home => 'سەرەکی';
+  String get home => 'پەڕەی سەرەکی';
 
   @override
   String get exercise => 'ڕاهێنان';
 
   @override
-  String get calculator => 'ژمێرەر';
+  String get calculator => 'بژمێر';
 
   @override
-  String get feedback => 'پێشنیار';
+  String get feedback => 'پێداچوونەوە';
+
+  @override
+  String get feedbackNav => 'رەخنە';
 
   @override
   String get notifications => 'ئاگادارکردنەوەکان';
@@ -89,7 +92,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get quickActions => 'کردارە خێراکان';
 
   @override
-  String get workout => 'ڕاهێنان';
+  String get workout => 'مەشق';
 
   @override
   String get meals => 'خواردنەکان';
@@ -352,7 +355,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get weightRangeLbs => 'کێش دەبێت نێوان 44-1100 پاوند بێت';
 
   @override
-  String get feedbackTitle => 'پێشنیار';
+  String get feedbackTitle => 'رەخنە';
 
   @override
   String get rate => 'هەڵسەنگاندن';
@@ -383,7 +386,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get homeExpireDate => 'ڕێکەوتی کۆتایی';
 
   @override
-  String get supplement => 'خۆراکی پێکەری';
+  String get supplement => 'تەواوکەری خۆراک';
 
   @override
   String get foodMenu => 'لیستی خواردن';
@@ -448,7 +451,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get food => 'خواردن';
 
   @override
-  String get suppliment => 'خۆراکی پێکەری';
+  String get suppliment => 'تەواوکەری خۆراک';
 
   @override
   String get mealPlanTitle => 'پلانی خواردن';
@@ -476,4 +479,179 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get tapOutsideToClose => 'دەرەوە دەست بدە بۆ داخستن';
+
+  @override
+  String get dailyCreatine => 'کریاتینی ڕۆژانە';
+
+  @override
+  String get dailyProtein => 'پرۆتینی ڕۆژانە';
+
+  @override
+  String gramsPerDay(String amount) {
+    return '$amount گرام/ڕۆژ';
+  }
+
+  @override
+  String get nutritionalNeeds => 'پێداویستی خۆراکی ڕۆژانە';
+
+  @override
+  String get age => 'تەمەن';
+
+  @override
+  String get ageHint => 'وەک: 25';
+
+  @override
+  String get gender => 'ڕەگەز';
+
+  @override
+  String get male => 'نێر';
+
+  @override
+  String get female => 'مێ';
+
+  @override
+  String get activityLevel => 'ئاستی چالاکی';
+
+  @override
+  String get sedentary => 'کەم چالاک';
+
+  @override
+  String get lightlyActive => 'کەمێک چالاک';
+
+  @override
+  String get moderatelyActive => 'مامناوەند چالاک';
+
+  @override
+  String get veryActive => 'زۆر چالاک';
+
+  @override
+  String get superActive => 'زۆر زۆر چالاک';
+
+  @override
+  String get bmr => 'ڕێژەی بنەڕەتی سووتان';
+
+  @override
+  String get tdee => 'کۆی وزەی ڕۆژانە';
+
+  @override
+  String get dailyWater => 'ئاوی ڕۆژانە';
+
+  @override
+  String get bodyFatPercentage => 'ڕێژەی چەوری جەستە';
+
+  @override
+  String get idealBodyWeight => 'کێشی گونجاوی جەستە';
+
+  @override
+  String caloriesPerDay(String amount) {
+    return '$amount کالۆری/ڕۆژ';
+  }
+
+  @override
+  String litersPerDay(String amount) {
+    return '$amount لیتر/ڕۆژ';
+  }
+
+  @override
+  String percentage(String amount) {
+    return '$amount%';
+  }
+
+  @override
+  String kilograms(String amount) {
+    return '$amount کیلۆ';
+  }
+
+  @override
+  String get macronutrients => 'ماکرۆ خۆراکەکانی ڕۆژانە';
+
+  @override
+  String get carbohydrates => 'کاربۆهایدرات';
+
+  @override
+  String get fats => 'چەوری';
+
+  @override
+  String caloriesAndGrams(String calories, String grams) {
+    return '$calories کالۆری ($gramsگرام)';
+  }
+
+  @override
+  String get pleaseEnterAge => 'تکایە تەمەنت بنووسە';
+
+  @override
+  String get pleaseEnterValidAge => 'تکایە تەمەنێکی دروست بنووسە';
+
+  @override
+  String get ageRange => 'تەمەن دەبێت نێوان 10-120 ساڵ بێت';
+
+  @override
+  String get metabolicCalculations => 'حیسابەکانی میتابۆلیزم';
+
+  @override
+  String get bodyComposition => 'پێکهاتەی جەستە';
+
+  @override
+  String get statistics => 'ئامارەکان';
+
+  @override
+  String get exerciseCompletedTitle => 'راهێنانەکە ئەنجام درا';
+
+  @override
+  String get workoutCompletedTitle => '🎉 هەموو ڕاهێنانەکان تەواو بوون!';
+
+  @override
+  String get exerciseCompletedBody =>
+      'هەی دەستخۆش شێرەکەم تۆ هەموو سێتەکانت ئەنجام دا';
+
+  @override
+  String get workoutCompletedBody =>
+      'زۆر باش! تۆ هەموو ڕاهێنانەکانی ئەمڕۆت تەواو کرد، بەردەوام بە! 💪';
+
+  @override
+  String get loadingStatistics => 'بارکردنی ئامارەکان...';
+
+  @override
+  String get somethingWentWrong => 'ببورە! هەڵەیەک ڕوویدا';
+
+  @override
+  String overviewDays(int days) {
+    return 'گشتی ($days ڕۆژ)';
+  }
+
+  @override
+  String get activeDays => 'ڕۆژانی چالاک';
+
+  @override
+  String get last30Days => 'دوایین ٣٠ ڕۆژ';
+
+  @override
+  String get currentStreak => 'زنجیرەی ئێستا';
+
+  @override
+  String get days => 'ڕۆژەکان';
+
+  @override
+  String get totalVolume => 'کۆی قەبارە';
+
+  @override
+  String get totalWeightLifted => 'کۆی کێشی هەڵگیراو';
+
+  @override
+  String get weeklyProgress => 'پێشکەوتنی هەفتانە';
+
+  @override
+  String get weightLiftedKg => 'کێشی هەڵگیراو (کیلۆ)';
+
+  @override
+  String get personalRecord => 'تۆمارێکی کەسی';
+
+  @override
+  String get personalBest => 'باشترینی کەسی';
+
+  @override
+  String get continueButton => 'بەردەوام بوون';
+
+  @override
+  String get statisticsSubtitle => 'پێشکەوتن و دەستکەوتەکانت ببینە';
 }

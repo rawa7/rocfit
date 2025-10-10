@@ -490,7 +490,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         children: [
                 Text(
             AppLocalizations.of(context)?.yourProgress ?? 'Your Progress',
-            style: AppTextStyles.headline3.copyWith(
+            style: AppTextStyles.headline4.copyWith(
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -547,19 +547,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
           Icon(
             icon,
             color: color,
-            size: 32,
+            size: 28,
           ),
                 const SizedBox(height: AppConstants.paddingSmall),
           Text(
             value,
-            style: AppTextStyles.headline3.copyWith(
+            style: AppTextStyles.headline4.copyWith(
               color: color,
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
             title,
-            style: AppTextStyles.bodyText2.copyWith(
+            style: AppTextStyles.caption.copyWith(
               color: color.withOpacity(0.8),
             ),
             textAlign: TextAlign.center,
@@ -718,7 +718,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         children: [
           Text(
             AppLocalizations.of(context)?.quickActions ?? 'Quick Actions',
-            style: AppTextStyles.headline3.copyWith(
+            style: AppTextStyles.headline4.copyWith(
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -781,12 +781,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Icon(
               icon,
               color: color,
-              size: 28,
+              size: 24,
             ),
             const SizedBox(height: AppConstants.paddingSmall),
             Text(
               label,
-              style: AppTextStyles.bodyText2.copyWith(
+              style: AppTextStyles.caption.copyWith(
                 color: color,
                 fontWeight: FontWeight.w600,
                   ),
@@ -823,8 +823,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
           const SizedBox(height: AppConstants.paddingMedium),
           _buildProfileOption(
             icon: Icons.bar_chart,
-            title: 'Statistics',
-            subtitle: 'View your workout progress and achievements',
+            title: AppLocalizations.of(context)?.statistics ?? 'Statistics',
+            subtitle: AppLocalizations.of(context)?.statisticsSubtitle ?? 'View your workout progress and achievements',
             onTap: () {
               _navigateToScreen(const StatisticsScreen());
             },

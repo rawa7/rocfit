@@ -53,6 +53,11 @@
   "@feedback": {
     "description": "Feedback screen title"
   },
+
+  "feedbackNav": "Feedback",
+  "@feedbackNav": {
+    "description": "Feedback navigation label"
+  },
   
   "notifications": "Notifications",
   "@notifications": {
@@ -798,5 +803,294 @@
   "tapOutsideToClose": "Tap outside to close",
   "@tapOutsideToClose": {
     "description": "Dialog close instructions"
+  },
+
+  "dailyCreatine": "Daily Creatine",
+  "@dailyCreatine": {
+    "description": "Daily creatine needed label"
+  },
+
+  "dailyProtein": "Daily Protein",
+  "@dailyProtein": {
+    "description": "Daily protein needed label"
+  },
+
+  "gramsPerDay": "{amount} g/day",
+  "@gramsPerDay": {
+    "description": "Grams per day format",
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+
+  "nutritionalNeeds": "Daily Nutritional Needs",
+  "@nutritionalNeeds": {
+    "description": "Daily nutritional needs section title"
+  },
+
+  "age": "Age",
+  "@age": {
+    "description": "Age input label"
+  },
+
+  "ageHint": "e.g., 25",
+  "@ageHint": {
+    "description": "Age input hint"
+  },
+
+  "gender": "Gender",
+  "@gender": {
+    "description": "Gender selection label"
+  },
+
+  "male": "Male",
+  "@male": {
+    "description": "Male gender option"
+  },
+
+  "female": "Female",
+  "@female": {
+    "description": "Female gender option"
+  },
+
+  "activityLevel": "Activity Level",
+  "@activityLevel": {
+    "description": "Activity level selection label"
+  },
+
+  "sedentary": "Sedentary",
+  "@sedentary": {
+    "description": "Sedentary activity level"
+  },
+
+  "lightlyActive": "Lightly Active",
+  "@lightlyActive": {
+    "description": "Lightly active activity level"
+  },
+
+  "moderatelyActive": "Moderately Active",
+  "@moderatelyActive": {
+    "description": "Moderately active activity level"
+  },
+
+  "veryActive": "Very Active",
+  "@veryActive": {
+    "description": "Very active activity level"
+  },
+
+  "superActive": "Super Active",
+  "@superActive": {
+    "description": "Super active activity level"
+  },
+
+  "bmr": "BMR (Basal Metabolic Rate)",
+  "@bmr": {
+    "description": "BMR calculation label"
+  },
+
+  "tdee": "TDEE (Total Daily Energy Expenditure)",
+  "@tdee": {
+    "description": "TDEE calculation label"
+  },
+
+  "dailyWater": "Daily Water Intake",
+  "@dailyWater": {
+    "description": "Daily water intake label"
+  },
+
+  "bodyFatPercentage": "Body Fat Percentage",
+  "@bodyFatPercentage": {
+    "description": "Body fat percentage label"
+  },
+
+  "idealBodyWeight": "Ideal Body Weight",
+  "@idealBodyWeight": {
+    "description": "Ideal body weight label"
+  },
+
+  "caloriesPerDay": "{amount} cal/day",
+  "@caloriesPerDay": {
+    "description": "Calories per day format",
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+
+  "litersPerDay": "{amount} L/day",
+  "@litersPerDay": {
+    "description": "Liters per day format",
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+
+  "percentage": "{amount}%",
+  "@percentage": {
+    "description": "Percentage format",
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+
+  "kilograms": "{amount} kg",
+  "@kilograms": {
+    "description": "Kilograms format",
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+
+  "macronutrients": "Daily Macronutrients",
+  "@macronutrients": {
+    "description": "Macronutrients section title"
+  },
+
+  "carbohydrates": "Carbohydrates",
+  "@carbohydrates": {
+    "description": "Carbohydrates label"
+  },
+
+  "fats": "Fats",
+  "@fats": {
+    "description": "Fats label"
+  },
+
+  "caloriesAndGrams": "{calories} cal ({grams}g)",
+  "@caloriesAndGrams": {
+    "description": "Calories and grams format",
+    "placeholders": {
+      "calories": {
+        "type": "String"
+      },
+      "grams": {
+        "type": "String"
+      }
+    }
+  },
+
+  "pleaseEnterAge": "Please enter your age",
+  "@pleaseEnterAge": {
+    "description": "Age validation error message"
+  },
+
+  "pleaseEnterValidAge": "Please enter a valid age",
+  "@pleaseEnterValidAge": {
+    "description": "Valid age validation error message"
+  },
+
+  "ageRange": "Age should be between 10-120 years",
+  "@ageRange": {
+    "description": "Age range validation error message"
+  },
+
+  "metabolicCalculations": "Metabolic Calculations",
+  "@metabolicCalculations": {
+    "description": "Metabolic calculations section title"
+  },
+
+  "bodyComposition": "Body Composition",
+  "@bodyComposition": {
+    "description": "Body composition section title"
+  },
+
+  "statistics": "Statistics",
+  "@statistics": {
+    "description": "Statistics screen title"
+  },
+
+  "logout": "Logout",
+  "@logout": {
+    "description": "Logout button text"
+  },
+  "exerciseCompletedTitle": "🎉 Exercise Completed!",
+  "@exerciseCompletedTitle": {
+    "description": "Title for exercise completion dialog"
+  },
+  "workoutCompletedTitle": "🎉 All Exercises Completed!",
+  "@workoutCompletedTitle": {
+    "description": "Title for workout completion dialog"
+  },
+  "exerciseCompletedBody": "Great job! You completed all sets.",
+  "@exerciseCompletedBody": {
+    "description": "Body text for exercise completion dialog"
+  },
+  "workoutCompletedBody": "Amazing work! You completed your entire workout. Keep it up! 💪",
+  "@workoutCompletedBody": {
+    "description": "Body text for workout completion dialog"
+  },
+  "loadingStatistics": "Loading statistics...",
+  "@loadingStatistics": {
+    "description": "Loading statistics message"
+  },
+  "somethingWentWrong": "Oops! Something went wrong",
+  "@somethingWentWrong": {
+    "description": "Error message title"
+  },
+  "overviewDays": "Overview ({days} days)",
+  "@overviewDays": {
+    "description": "Overview section title with days",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "activeDays": "Active Days",
+  "@activeDays": {
+    "description": "Active days stat title"
+  },
+  "last30Days": "Last 30 days",
+  "@last30Days": {
+    "description": "Last 30 days subtitle"
+  },
+  "currentStreak": "Current Streak",
+  "@currentStreak": {
+    "description": "Current streak stat title"
+  },
+  "days": "Days",
+  "@days": {
+    "description": "Days unit"
+  },
+  "totalVolume": "Total Volume",
+  "@totalVolume": {
+    "description": "Total volume stat title"
+  },
+  "totalWeightLifted": "Total weight lifted",
+  "@totalWeightLifted": {
+    "description": "Total weight lifted subtitle"
+  },
+  "weeklyProgress": "Weekly Progress",
+  "@weeklyProgress": {
+    "description": "Weekly progress section title"
+  },
+  "weightLiftedKg": "Weight Lifted (kg)",
+  "@weightLiftedKg": {
+    "description": "Weight lifted chart label"
+  },
+  "personalRecord": "Personal Record",
+  "@personalRecord": {
+    "description": "Personal record section title"
+  },
+  "personalBest": "Personal Best",
+  "@personalBest": {
+    "description": "Personal best label"
+  },
+  "continueButton": "Continue",
+  "@continueButton": {
+    "description": "Continue button text"
+  },
+  "statisticsSubtitle": "View your workout progress and achievements",
+  "@statisticsSubtitle": {
+    "description": "Statistics option subtitle in profile page"
   }
 }
