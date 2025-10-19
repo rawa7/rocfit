@@ -789,6 +789,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               style: AppTextStyles.caption.copyWith(
                 color: color,
                 fontWeight: FontWeight.w600,
+                fontSize: 11,
                   ),
                 ),
               ],
