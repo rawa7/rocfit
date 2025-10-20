@@ -27,11 +27,14 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final PageController _pageController = PageController();
+  final TheRocFitApiClient _apiClient = TheRocFitApiClient();
   int _currentPage = 0;
   List<String> _carouselImages = [];
   List<GameItem> _gameItems = [];
+  ProfileData? _profileData;
   bool _isLoading = true;
   bool _isLoadingGameItems = true;
+  bool _isLoadingProfile = true;
   Timer? _autoScrollTimer;
 
   @override
@@ -39,6 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     _loadCarouselImages();
     _loadGameItems();
+    _loadProfile();
     _startAutoScroll();
   }
 
@@ -73,8 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _loadCarouselImages() async {
     try {
-      final apiClient = TheRocFitApiClient();
-      final response = await apiClient.getCarouselImages();
+      final response = await _apiClient.getCarouselImages();
       
       if (response.success && response.data != null) {
         setState(() {
@@ -96,8 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _loadGameItems() async {
     try {
-      final apiClient = TheRocFitApiClient();
-      final response = await apiClient.getGameItems();
+      final response = await _apiClient.getGameItems();
       
       if (response.success && response.data != null) {
         setState(() {
@@ -113,6 +115,41 @@ class _HomeScreenState extends State<HomeScreen> {
       print('Error loading game items: $e');
       setState(() {
         _isLoadingGameItems = false;
+      });
+    }
+  }
+
+  Future<void> _loadProfile() async {
+    setState(() {
+      _isLoadingProfile = true;
+    });
+
+    try {
+      final authProvider = Provider.of<AuthProvider>(context, listen: false);
+      
+      // Check if user is logged in (not guest) and has a valid user ID
+      if (authProvider.isLoggedIn && authProvider.currentUser?.id != null) {
+        final response = await _apiClient.getUserProfileData(authProvider.currentUser!.id);
+        if (response.success && response.data != null) {
+          setState(() {
+            _profileData = response.data!;
+            _isLoadingProfile = false;
+          });
+        } else {
+          setState(() {
+            _isLoadingProfile = false;
+          });
+        }
+      } else {
+        // Guest users or not logged in - just stop loading
+        setState(() {
+          _isLoadingProfile = false;
+        });
+      }
+    } catch (e) {
+      print('Error loading profile: $e');
+      setState(() {
+        _isLoadingProfile = false;
       });
     }
   }
@@ -282,7 +319,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             Text(
-                              '1-5-2025',
+                              _isLoadingProfile 
+                                  ? '...' 
+                                  : (_profileData?.formattedStartDate ?? '1-5-2025'),
                               style: AppTextStyles.bodyText2.copyWith(
                                 color: AppColors.white,
                                 fontWeight: FontWeight.w600,
@@ -297,7 +336,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             Text(
-                              '1-5-2025',
+                              _isLoadingProfile 
+                                  ? '...' 
+                                  : (_profileData?.formattedEndDate ?? '1-5-2025'),
                               style: AppTextStyles.bodyText2.copyWith(
                                 color: AppColors.white,
                                 fontWeight: FontWeight.w600,

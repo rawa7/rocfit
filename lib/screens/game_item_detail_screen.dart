@@ -71,7 +71,8 @@ class _GameItemDetailScreenState extends State<GameItemDetailScreen> {
                         });
                       },
                       itemCount: images.length,
-                                             itemBuilder: (context, index) {
+                      physics: const BouncingScrollPhysics(),
+                      itemBuilder: (context, index) {
                          return GestureDetector(
                            onTap: () {
                              Navigator.push(
@@ -192,6 +193,76 @@ class _GameItemDetailScreenState extends State<GameItemDetailScreen> {
                         ),
                       ),
                     
+                    // Swipe hint arrows (only show if more than 1 image)
+                    if (images.length > 1) ...[
+                      // Left arrow
+                      Positioned(
+                        left: 16,
+                        top: 0,
+                        bottom: 0,
+                        child: Center(
+                          child: GestureDetector(
+                            onTap: () {
+                              if (_currentImageIndex > 0) {
+                                _pageController.animateToPage(
+                                  _currentImageIndex - 1,
+                                  duration: const Duration(milliseconds: 300),
+                                  curve: Curves.easeInOut,
+                                );
+                              }
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                color: Colors.black.withOpacity(0.3),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Icon(
+                                Icons.chevron_left,
+                                color: _currentImageIndex > 0 
+                                    ? Colors.white 
+                                    : Colors.white.withOpacity(0.5),
+                                size: 24,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      // Right arrow
+                      Positioned(
+                        right: 16,
+                        top: 0,
+                        bottom: 0,
+                        child: Center(
+                          child: GestureDetector(
+                            onTap: () {
+                              if (_currentImageIndex < images.length - 1) {
+                                _pageController.animateToPage(
+                                  _currentImageIndex + 1,
+                                  duration: const Duration(milliseconds: 300),
+                                  curve: Curves.easeInOut,
+                                );
+                              }
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                color: Colors.black.withOpacity(0.3),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Icon(
+                                Icons.chevron_right,
+                                color: _currentImageIndex < images.length - 1
+                                    ? Colors.white 
+                                    : Colors.white.withOpacity(0.5),
+                                size: 24,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                    
                     // Fullscreen icon indicator
                     Positioned(
                       bottom: 20,
@@ -202,10 +273,23 @@ class _GameItemDetailScreenState extends State<GameItemDetailScreen> {
                           color: Colors.black.withOpacity(0.6),
                           borderRadius: BorderRadius.circular(20),
                         ),
-                        child: const Icon(
-                          Icons.fullscreen,
-                          color: Colors.white,
-                          size: 20,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            if (images.length > 1) ...[
+                              const Icon(
+                                Icons.swipe,
+                                color: Colors.white,
+                                size: 16,
+                              ),
+                              const SizedBox(width: 4),
+                            ],
+                            const Icon(
+                              Icons.fullscreen,
+                              color: Colors.white,
+                              size: 20,
+                            ),
+                          ],
                         ),
                       ),
                     ),
